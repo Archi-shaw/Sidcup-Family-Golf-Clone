@@ -1,0 +1,396 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat';
+    color: #fff;
+}
+body {
+    overflow-x: hidden;
+  }
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+#nav{
+    height: 100%;
+    width: 100%;
+    padding:0px 100px;
+    margin-top:13px ;
+    position: fixed;
+    gap: 30px;  /* to make gap between elements */
+    display: flex; /* to make it in one line */
+    align-items: center; /* to align itens y axis*/
+    justify-content: flex-start; /* to handle flex box from start*/
+    z-index: 99;
+    overflow: hidden;
+}
+#nav>img{
+    height: 67px;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+}
+#nav>h4{
+    text-transform: uppercase; /* to make text in uppercase */
+    font-weight: 400;
+}
+#main{
+   position: relative;
+   background-color: rgba(0, 0, 0, 0.458);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    overflow: hidden;
+}
+#page1>h1{
+    font-weight: 800;
+    font-size: 95px;
+    height: 100px;
+    position: relative;
+    text-transform: uppercase;
+}
+#page1>h2{
+    font-weight: 850;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-top: 23px;
+    margin-bottom:13px ;
+}
+/* pseudo elements = content is compulsory 
+for boder we use webkit-text-stroke= width color*/
+#page1 h1::before{
+   content: "Eat. Drink. Play.";
+   position: absolute;
+   color: black;
+   top: -5px;
+   left: -4px;
+   -webkit-text-stroke:2px #b3ec17;
+   z-index: -1;
+}
+#page1>p{
+    font-weight: 400;
+    font-size: 18px;
+    width: 50%;
+    text-align: center;
+}
+#page2{
+   min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#cursor{
+    width: 20px;
+    height: 20px;
+    background-color: #b3ec17;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    width: 300px;
+    height: 300px;
+    background-color: #b3ec173c;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    filter: blur(50px);
+    z-index: 9;
+}
+#scroller{
+    background-color: transparent;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in>h4{
+    display: inline-block;
+    font-size: 87px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 20px;
+    color: transparent;
+    transition: all linear 0.3s;
+    -webkit-text-stroke: 2px  #b3ec1774;
+}
+#scroller h4:hover{
+    color: #b3ec17;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#aboutus{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    margin-top: 70px;
+    padding: 0px 100px;
+    align-items: center;
+    justify-content: space-between;
+}
+#aboutus>img{
+    height: 130px;
+    width: 130px;
+    border-radius: 7%;
+    object-fit: cover;
+}
+#aboutus>#img2{
+    height: 165px;
+    width: 115px;
+    border-radius: 7%;
+    object-fit: cover;
+}
+#about-us-in{
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    align-items: center;
+}
+#about-us-in>h3{
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: -70px;
+    margin-bottom: 23px;
+}
+#about-us-in>p{
+   font-size: 17px;
+   line-height: 26px;
+}
+#card-contain{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 75vh;
+    width: 22%;
+    background-color: blue;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://raw.githubusercontent.com/saarthack/sidcup-family-golf/main/Assests/card3.avif);
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #b3ec17;
+    border-radius: 20px;
+    padding:30px;
+    padding-top: 50px;
+    opacity: 0;
+    transition: all ease 0.6s;
+  }
+.overlay h3{
+    color: #000;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    white-space: nowrap;
+    margin-bottom: 20px;
+  }
+.overlay:hover{
+    opacity: 1;
+}
+.overlay p{
+   color: #000;
+   font-size: 15px;
+}
+#greendiv{
+    background: linear-gradient(to left bottom, #119f3a, #ace022);
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#greendiv>h4{
+    height: 50%;
+    line-height: 50px;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    font-size: 27px;
+    text-transform: uppercase;
+}
+#greendiv img{
+    height: 100%;
+    object-fit: cover;
+    width: 14% ;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page3>p{
+    width: 50%;
+    line-height: 30px;
+    height: 60%;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+}
+#page3 img{
+    position: absolute;
+    width: 60px;
+    height:60px
+}
+#page3 #colon1{
+   left: 20%;
+   top: 5%;
+}
+#page3 #colon2{
+    right: 17%;
+    top: 43%;
+ }
+ #page4 {
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+  }
+.elem {
+    height: 70%;
+    width: 26%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+.elem h2 {
+    height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  display: flex;
+  color: #000;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.5s;
+  font-size: 2vw;
+  position: absolute;
+  z-index: 10;
+}
+.elem img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+  scale: 1.1;
+}
+.elem:hover h2 {
+    color: #fff;
+    background-color: transparent;
+  }
+.elem:hover img {
+    scale: 1;
+  }
+#page4 h1 {
+    font-size: 6vw;
+    position: absolute;
+    top: -15%;
+    font-weight: 900;
+    font-family: gilroy;
+    color: #000;
+    -webkit-text-stroke: 2px #fff;
+}
+#page4 h1:hover{
+    color: #b3ec17;
+}
+
+
+@media (min-width: 768px) {
+    #nav {
+        padding: 0 100px;
+        gap: 30px;
+    }
+
+    #page1 h1 {
+        font-size: 7vw;
+    }
+
+    #page1 h2 {
+        font-size: 3vw;
+    }
+
+    #scroller-in h4 {
+        font-size: 5vw;
+    }
+
+    #aboutus {
+        flex-direction: row;
+        padding: 0 100px;
+    }
+
+    #aboutus img {
+        height: 165px;
+        width: 165px;
+    }
+
+    #card-contain {
+        height: 100vh;
+    }
+
+    .card {
+        width: 22%;
+        height: 75vh;
+    }
+
+    #greendiv h4 {
+        font-size: 27px;
+    }
+
+    #page4 h1 {
+        font-size: 6vw;
+    }
+}
